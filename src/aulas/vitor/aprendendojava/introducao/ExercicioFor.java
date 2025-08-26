@@ -1,6 +1,6 @@
 package aulas.vitor.aprendendojava.introducao;
 
-public class Main {
+public class ExercicioFor {
     public static void main(String[] args) {
         
         for (int i = 0; i <= 1000; i++) {
