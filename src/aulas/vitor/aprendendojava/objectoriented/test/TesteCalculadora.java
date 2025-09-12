@@ -9,7 +9,7 @@ public class TesteCalculadora {
         calculadora.somarDados(10, 20);
         calculadora.subtrairDados(100,59);
         calculadora.multiplicarDados(7,7);
-        double result = calculadora.dividirDados(22,11);
+        double result = calculadora.dividirDados(22,0);
         System.out.println(result);
     }
 }
