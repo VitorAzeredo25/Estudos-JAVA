@@ -8,22 +8,31 @@ public class Funcionario {
     public int idade;
     public BigDecimal[] salarios;
 
-    public void imprimirDados(){
+    public void imprimirDados() {
         System.out.println("Nome: " + this.nome);
         System.out.println("Idade: " + this.idade);
-        for(BigDecimal salario: salarios){
-            System.out.println("Primeiro salário: R$" + salario);
+        if (salarios != null) {
+            for (BigDecimal salario : salarios) {
+                System.out.println("Primeiro salário: R$" + salario);
+            }
+        } else {
+            System.out.println("Sem salários para mostrar...");
         }
     }
 
     BigDecimal soma = BigDecimal.ZERO;
-    public void mediaSalarios(){
-        for(BigDecimal valores: salarios){
-            soma = soma.add(valores);
+
+    public void mediaSalarios() {
+        if(salarios != null) {
+            for (BigDecimal valores : salarios) {
+                soma = soma.add(valores);
+            }
+
+            BigDecimal media = soma.divide(new BigDecimal("3"), 2, RoundingMode.HALF_UP);
+
+            System.out.println("Média Salarial: R$" + media);
+        } else {
+            System.out.println("Sem salários para fazer a média...");
         }
-
-        BigDecimal media = soma.divide(new BigDecimal("3"), 2, RoundingMode.HALF_UP);
-
-        System.out.println("Média Salarial: R$" + media);
     }
 }
