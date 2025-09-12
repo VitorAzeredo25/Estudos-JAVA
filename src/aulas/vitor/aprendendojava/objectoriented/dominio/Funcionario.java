@@ -6,20 +6,21 @@ import java.math.RoundingMode;
 public class Funcionario {
     public String nome;
     public int idade;
-    public BigDecimal salario01;
-    public BigDecimal salario02;
-    public BigDecimal salario03;
+    public BigDecimal[] salarios;
 
     public void imprimirDados(){
         System.out.println("Nome: " + this.nome);
         System.out.println("Idade: " + this.idade);
-        System.out.println("Primeiro salário: R$" + this.salario01);
-        System.out.println("Primeiro salário: R$" + this.salario02);
-        System.out.println("Primeiro salário: R$" + this.salario03);
+        for(BigDecimal salario: salarios){
+            System.out.println("Primeiro salário: R$" + salario);
+        }
     }
 
+    BigDecimal soma = BigDecimal.ZERO;
     public void mediaSalarios(){
-        BigDecimal soma = salario01.add(salario02).add(salario03);
+        for(BigDecimal valores: salarios){
+            soma = soma.add(valores);
+        }
 
         BigDecimal media = soma.divide(new BigDecimal("3"), 2, RoundingMode.HALF_UP);
 

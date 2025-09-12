@@ -10,9 +10,11 @@ public class TesteFuncionario {
 
         funcionario01.nome = "Vítor";
         funcionario01.idade = 22;
-        funcionario01.salario01 = new BigDecimal("3000.00");
-        funcionario01.salario02 = new BigDecimal("4000.00");
-        funcionario01.salario03 = new BigDecimal("6000.00");
+        funcionario01.salarios = new BigDecimal[]{
+                new BigDecimal("3000.00"),
+                new BigDecimal("4000.00"),
+                new BigDecimal("6000.00")
+        };
 
         funcionario01.imprimirDados();
         funcionario01.mediaSalarios();
