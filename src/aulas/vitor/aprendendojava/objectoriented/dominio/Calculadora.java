@@ -21,5 +21,14 @@ public class Calculadora {
         }
 
         return num1 / num2;
+
+    }
+
+    public void somarArray(int[] numeros){
+        int soma = 0;
+        for(int num: numeros){
+            soma += num;
+        }
+        System.out.println(soma);
     }
 }
